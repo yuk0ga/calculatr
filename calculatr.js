@@ -121,6 +121,7 @@ point.onclick = function enterPoint(){
 
 divbtn.onclick = function divide(){
   numbox.value += "/";
+
 }
 
 multibtn.onclick = function multiply(){
