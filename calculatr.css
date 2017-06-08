@@ -1,0 +1,260 @@
+
+#result {
+  background-color: black;
+  color: white;
+  border-color: black;
+  padding: 0;
+  margin: 0;
+  width: 480px;
+  height: 150px;
+  font-size: 700%;
+  font-family: helvetica-light;
+  text-align: right;
+}
+
+#clr {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -6px 0px 0px;
+  width: 120px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#plusminus {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -6.3px 0px 0px;
+  width: 124px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#percent {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -7px 0px 0px;
+  width: 121px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#divbtn {
+  background-color: orange;
+  color: white;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px 0px 0px 0px;
+  width: 122px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#seven {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: -0px -6px 0px 0px;
+  width: 120px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#eight {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -6.3px 0px 0px;
+  width: 124px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#nine {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -7px 0px 0px;
+  width: 121px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#multibtn {
+  background-color: orange;
+  color: white;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px 0px 0px 0px;
+  width: 122px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#four {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -6px 0px 0px;
+  width: 120px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#five {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -6.3px 0px 0px;
+  width: 124px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#six {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -7px 0px 0px;
+  width: 121px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#minusbtn {
+  background-color: orange;
+  color: white;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px 0px 0px 0px;
+  width: 122px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#one {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -6px 0px 0px;
+  width: 120px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#two {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -6.3px 0px 0px;
+  width: 124px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#three {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -7px 0px 0px;
+  width: 121px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#plusbtn {
+  background-color: orange;
+  color: white;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px 0px 0px 0px;
+  width: 122px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#zero {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -6px 0px 0px;
+  width: 243px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#point {
+  background-color: #cfcfcf;
+  color: black;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px -7px 0px 0px;
+  width: 121px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
+
+#equals {
+  background-color: orange;
+  color: white;
+  border-width: thin;
+  border-color: black;
+  padding: 0;
+  margin: 0px 0px 0px 0px;
+  width: 122px;
+  height: 120px;
+  font-size: 250%;
+  font-family: helvetica;
+}
