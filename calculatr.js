@@ -18,9 +18,11 @@ var plusbtn = document.getElementById("plusbtn");
 var zero = document.getElementById("zero");
 var point = document.getElementById("point");
 var equals = document.getElementById("equals");
+var operator = 0;
 
 clrbtn.onclick = function clearall(){
     numbox.value = "0";
+    operator = 0;
   }
 
 plumi.onclick = function plumi(){
@@ -122,22 +124,47 @@ point.onclick = function enterPoint(){
 /*const equation = numbox.value;*/
 
 divbtn.onclick = function divide(){
+if (operator === 0) {
   numbox.value += "/";
+  operator = 1;
+}
+  else {
+    return;
+  }
 }
 
 multibtn.onclick = function multiply(){
+if (operator === 0) {
   numbox.value += "*";
+  operator = 1;
+}
+  else {
+    return;
+  }
 }
 
 plusbtn.onclick = function add(){
+  if (operator === 0) {
   numbox.value += "+";
+  operator = 1;
+}
+  else {
+    return;
+  }
 }
 
 minusbtn.onclick = function subtract(){
+  if (operator === 0) {
   numbox.value += "-";
+  operator = 1;
+}
+  else {
+    return;
+  }
 }
 
 equals.onclick = function calculate(){
 var answer = eval(numbox.value);
 numbox.value = answer;
+operator = 0;
 }
