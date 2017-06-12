@@ -119,9 +119,10 @@ point.onclick = function enterPoint(){
   numbox.value += ".";
 }
 
+/*const equation = numbox.value;*/
+
 divbtn.onclick = function divide(){
   numbox.value += "/";
-
 }
 
 multibtn.onclick = function multiply(){
@@ -137,6 +138,6 @@ minusbtn.onclick = function subtract(){
 }
 
 equals.onclick = function calculate(){
-  console.log(numbox.value);
-
+var answer = eval(numbox.value);
+numbox.value = answer;
 }
