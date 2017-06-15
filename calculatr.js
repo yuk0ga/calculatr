@@ -75,6 +75,7 @@ function fontResize (){
   if (numbox.value.length > 12) {
     numbox.style.fontSize = "300%";
   }
+  operator = 0;
 }
 
 seven.onclick = function enterSeven(){
@@ -200,5 +201,5 @@ equals.onclick = function calculate(){
 var answer = eval(numbox.value);
 numbox.value = answer;
 fontResize();
-operator = 0;
+//operator = 0;
 }
