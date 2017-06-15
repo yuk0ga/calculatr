@@ -23,6 +23,7 @@ var operator = 0;
 clrbtn.onclick = function clearall(){
     numbox.value = "0";
     operator = 0;
+    numbox.style.fontSize = "700%";
   }
 
 plumi.onclick = function plumi(){
@@ -40,85 +41,117 @@ percent.onclick = function percentify(){
 
 /*
 var numbers = [one, two, three, four, five, six, seven, eight, nine, zero];
-for (x=0; x<numbers.length; x++){
-  numbers[x].onclick = function enter(){
-    numbox.value += x;
-  }
+switch (numbers) {
+  case [0]:
+
+}
+
+switch (true) {
+  case numbox.value.length > 7:
+    numbox.style.fontSize = "600%";
+    break;
+  case numbox.value.length > 8:
+    numbox.style.fontSize = "500%";
+    break;
+  case numbox.value.length > 9:
+    numbox.style.fontSize = "400%";
+    break;
+  case numbox.value.length >10:
+    numbox.style.fontSize = "250%";
+    break;
 }
 */
 
-seven.onclick = function enterSeven(){
-if (numbox.value === "0"){
-  numbox.value = "";
+function fontResize (){
+  if (numbox.value === "0"){
+    numbox.value = "";
+  }
+  if (numbox.value.length > 6) {
+    numbox.style.fontSize = "500%";
+  }
+  if (numbox.value.length > 9) {
+    numbox.style.fontSize = "400%";
+  }
+  if (numbox.value.length > 12) {
+    numbox.style.fontSize = "300%";
+  }
 }
-  numbox.value += 7;
+
+seven.onclick = function enterSeven(){
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 7;
+  }
 }
 
 eight.onclick = function enterEight(){
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 8;
   }
-  numbox.value += 8;
 }
 
 nine.onclick = function enterNine(){
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 9;
   }
-  numbox.value += 9;
 }
 
 four.onclick = function enterFour() {
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 4;
   }
-  numbox.value += 4;
 }
 
 five.onclick = function enterFive(){
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 5;
   }
-  numbox.value += 5;
 }
 
 six.onclick = function enterSix(){
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 6;
   }
-  numbox.value += 6;
 }
 
 one.onclick = function enterOne(){
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 1;
   }
-  numbox.value += 1;
 }
 
 two.onclick = function enterTwo(){
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 2;
   }
-  numbox.value += 2;
 }
 
 three.onclick = function enterThree(){
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 3;
   }
-  numbox.value += 3;
 }
 
 zero.onclick = function enterZero(){
-  if (numbox.value === "0"){
-    numbox.value = "";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += 0;
   }
-  numbox.value += 0;
 }
 
 point.onclick = function enterPoint(){
-  numbox.value += ".";
+  fontResize();
+  if (numbox.value.length < 18) {
+    numbox.value += ".";
+  }
 }
 
 /*const equation = numbox.value;*/
@@ -166,5 +199,6 @@ minusbtn.onclick = function subtract(){
 equals.onclick = function calculate(){
 var answer = eval(numbox.value);
 numbox.value = answer;
+fontResize();
 operator = 0;
 }
