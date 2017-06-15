@@ -19,10 +19,12 @@ var zero = document.getElementById("zero");
 var point = document.getElementById("point");
 var equals = document.getElementById("equals");
 var operator = 0;
+var dot = 0;
 
 clrbtn.onclick = function clearall(){
     numbox.value = "0";
     operator = 0;
+    dot = 0;
     numbox.style.fontSize = "700%";
   }
 
@@ -150,8 +152,9 @@ zero.onclick = function enterZero(){
 
 point.onclick = function enterPoint(){
   fontResize();
-  if (numbox.value.length < 18) {
+  if (numbox.value.length < 18 && dot === 0) {
     numbox.value += ".";
+    dot = 1;
   }
 }
 
@@ -161,6 +164,7 @@ divbtn.onclick = function divide(){
 if (operator === 0) {
   numbox.value += "/";
   operator = 1;
+  dot = 0;
 }
   else {
     return;
@@ -171,6 +175,7 @@ multibtn.onclick = function multiply(){
 if (operator === 0) {
   numbox.value += "*";
   operator = 1;
+  dot = 0;
 }
   else {
     return;
@@ -181,6 +186,7 @@ plusbtn.onclick = function add(){
   if (operator === 0) {
   numbox.value += "+";
   operator = 1;
+  dot = 0;
 }
   else {
     return;
@@ -191,6 +197,7 @@ minusbtn.onclick = function subtract(){
   if (operator === 0) {
   numbox.value += "-";
   operator = 1;
+  dot = 0;
 }
   else {
     return;
