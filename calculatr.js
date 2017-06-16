@@ -45,17 +45,24 @@ clrbtn.onclick = function clearall(){
   }
 
 plumi.onclick = function plumi(){
-    if(numbox.value < 0){
+    if(numbox.value < 0　&& operator === 0){
       numbox.value = Math.abs(numbox.value); //returns absolute value.
     }
-    else {
+    else if (numbox.value > 0 && operator ===0){
       numbox.value = -Math.abs(numbox.value);
+    }
+    else{
+      return;
     }
   }
 
 percent.onclick = function percentify(){
-  numbox.value/=100;
-  fontResize();
+  if (operator === 0) {
+    numbox.value/=100;
+    fontResize();
+  } else {
+    return;
+  }
 }
 
 /*
