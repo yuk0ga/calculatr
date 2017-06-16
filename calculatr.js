@@ -168,7 +168,9 @@ if (operator === 0) {
   dot = 0;
 }
   else {
-    return;
+    numbox.value = numbox.value.substring(0,numbox.value.length-1);
+    numbox.value += "/";
+    dot = 0;
   }
 }
 
@@ -179,7 +181,9 @@ if (operator === 0) {
   dot = 0;
 }
   else {
-    return;
+    numbox.value = numbox.value.substring(0,numbox.value.length-1);
+    numbox.value += "*";
+    dot = 0;
   }
 }
 
@@ -190,7 +194,9 @@ plusbtn.onclick = function add(){
   dot = 0;
 }
   else {
-    return;
+    numbox.value = numbox.value.substring(0,numbox.value.length-1);
+    numbox.value += "+";
+    dot = 0;
   }
 }
 
@@ -201,7 +207,9 @@ minusbtn.onclick = function subtract(){
   dot = 0;
 }
   else {
-    return;
+    numbox.value = numbox.value.substring(0,numbox.value.length-1);
+    numbox.value += "-";
+    dot = 0;
   }
 }
 
