@@ -21,6 +21,22 @@ var equals = document.getElementById("equals");
 var operator = 0;
 var dot = 0;
 
+function fontResize (){
+  if (numbox.value === "0"){
+    numbox.value = "";
+  }
+  if (numbox.value.length > 6) {
+    numbox.style.fontSize = "500%";
+  }
+  if (numbox.value.length > 9) {
+    numbox.style.fontSize = "400%";
+  }
+  if (numbox.value.length > 12) {
+    numbox.style.fontSize = "300%";
+  }
+  operator = 0;
+}
+
 clrbtn.onclick = function clearall(){
     numbox.value = "0";
     operator = 0;
@@ -39,6 +55,7 @@ plumi.onclick = function plumi(){
 
 percent.onclick = function percentify(){
   numbox.value/=100;
+  fontResize();
 }
 
 /*
@@ -63,22 +80,6 @@ switch (true) {
     break;
 }
 */
-
-function fontResize (){
-  if (numbox.value === "0"){
-    numbox.value = "";
-  }
-  if (numbox.value.length > 6) {
-    numbox.style.fontSize = "500%";
-  }
-  if (numbox.value.length > 9) {
-    numbox.style.fontSize = "400%";
-  }
-  if (numbox.value.length > 12) {
-    numbox.style.fontSize = "300%";
-  }
-  operator = 0;
-}
 
 seven.onclick = function enterSeven(){
   fontResize();
