@@ -20,6 +20,7 @@ var point = document.getElementById("point");
 var equals = document.getElementById("equals");
 var operator = 0;
 var dot = 0;
+var values = [];
 
 function fontResize (){
   if (numbox.value.length > 6) {
@@ -75,6 +76,10 @@ function numButton(numWord, num) {
     if (numbox.value === "0"){
       numbox.value = "";
     }
+    if (operator !== 0){
+      values[0] = numbox.value;
+      numbox.value = "";
+    }
     if (numbox.value.length < 15){
       numbox.value += num;
       operator = 0;
@@ -93,63 +98,24 @@ numButton(two, 2);
 numButton(three, 3);
 numButton(zero, 0);
 
-/*const equation = numbox.value;*/
-
-divbtn.onclick = function divide(){
-if (operator === 0) {
-  numbox.value += "/";
-  operator = 1;
-  dot = 0;
-}
-  else {
-    numbox.value = numbox.value.substring(0,numbox.value.length-1);
-    numbox.value += "/";
-    dot = 0;
+function operation (opebtn, opeValue, opeSign) {
+  opebtn.onclick = function operate(){
+    if (operator !== opeValue) {
+      values[1] = opeSign;
+      operator = opeValue;
+      dot = 0;
+    }
   }
 }
 
-multibtn.onclick = function multiply(){
-if (operator === 0) {
-  numbox.value += "*";
-  operator = 1;
-  dot = 0;
-}
-  else {
-    numbox.value = numbox.value.substring(0,numbox.value.length-1);
-    numbox.value += "*";
-    dot = 0;
-  }
-}
-
-plusbtn.onclick = function add(){
-  if (operator === 0) {
-  numbox.value += "+";
-  operator = 1;
-  dot = 0;
-}
-  else {
-    numbox.value = numbox.value.substring(0,numbox.value.length-1);
-    numbox.value += "+";
-    dot = 0;
-  }
-}
-
-minusbtn.onclick = function subtract(){
-  if (operator === 0) {
-  numbox.value += "-";
-  operator = 1;
-  dot = 0;
-}
-  else {
-    numbox.value = numbox.value.substring(0,numbox.value.length-1);
-    numbox.value += "-";
-    dot = 0;
-  }
-}
+operation (divbtn, 1, "/");
+operation (multibtn, 2, "*");
+operation (plusbtn, 3, "+");
+operation (minusbtn, 4, "-");
 
 equals.onclick = function calculate(){
-var answer = eval(numbox.value);
+var answer = eval(values[0]+values[1]+numbox.value);
 numbox.value = answer;
 fontResize();
-//operator = 0;
+operator = 0;
 }
