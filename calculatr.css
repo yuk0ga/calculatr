@@ -1,8 +1,8 @@
 
 #result {
-  background-color: black;
+  background-color: #202020;
   color: white;
-  border-color: black;
+  border-color: #202020;
   padding: 0;
   margin: 0;
   width: 480px;
@@ -52,7 +52,7 @@
 }
 
 #divbtn {
-  background-color: orange;
+  background-color: #F68C12;
   color: white;
   border-width: thin;
   border-color: black;
@@ -104,7 +104,7 @@
 }
 
 #multibtn {
-  background-color: orange;
+  background-color: #F68C12;
   color: white;
   border-width: thin;
   border-color: black;
@@ -156,7 +156,7 @@
 }
 
 #minusbtn {
-  background-color: orange;
+  background-color: #F68C12;
   color: white;
   border-width: thin;
   border-color: black;
@@ -208,7 +208,7 @@
 }
 
 #plusbtn {
-  background-color: orange;
+  background-color: #F68C12;
   color: white;
   border-width: thin;
   border-color: black;
@@ -247,7 +247,7 @@
 }
 
 #equals {
-  background-color: orange;
+  background-color: #F68C12;
   color: white;
   border-width: thin;
   border-color: black;
