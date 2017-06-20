@@ -18,29 +18,29 @@ var plusbtn = document.getElementById("plusbtn");
 var zero = document.getElementById("zero");
 var point = document.getElementById("point");
 var equals = document.getElementById("equals");
+var equalbtn = 0;
 var operator = 0;
 var dot = 0;
+var values = [];
 
 function fontResize (){
-  if (numbox.value === "0"){
-    numbox.value = "";
-  }
-  if (numbox.value.length > 6) {
+if (numbox.value.length > 6 && numbox.value.length <= 9) {
     numbox.style.fontSize = "500%";
-  }
-  if (numbox.value.length > 9) {
+  } else if (numbox.value.length > 9 && numbox.value.length <= 12) {
     numbox.style.fontSize = "400%";
+  } else if (numbox.value.length > 12) {
+    numbox.style.fontSize = "290%";
+  } else {
+    numbox.style.fontSize = "700%";
   }
-  if (numbox.value.length > 12) {
-    numbox.style.fontSize = "300%";
-  }
-  operator = 0;
 }
 
 clrbtn.onclick = function clearall(){
     numbox.value = "0";
     operator = 0;
+    equalbtn = 0;
     dot = 0;
+    values = [];
     numbox.style.fontSize = "700%";
   }
 
@@ -65,99 +65,6 @@ percent.onclick = function percentify(){
   }
 }
 
-/*
-var numbers = [one, two, three, four, five, six, seven, eight, nine, zero];
-switch (numbers) {
-  case [0]:
-
-}
-
-switch (true) {
-  case numbox.value.length > 7:
-    numbox.style.fontSize = "600%";
-    break;
-  case numbox.value.length > 8:
-    numbox.style.fontSize = "500%";
-    break;
-  case numbox.value.length > 9:
-    numbox.style.fontSize = "400%";
-    break;
-  case numbox.value.length >10:
-    numbox.style.fontSize = "250%";
-    break;
-}
-*/
-
-seven.onclick = function enterSeven(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 7;
-  }
-}
-
-eight.onclick = function enterEight(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 8;
-  }
-}
-
-nine.onclick = function enterNine(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 9;
-  }
-}
-
-four.onclick = function enterFour() {
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 4;
-  }
-}
-
-five.onclick = function enterFive(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 5;
-  }
-}
-
-six.onclick = function enterSix(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 6;
-  }
-}
-
-one.onclick = function enterOne(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 1;
-  }
-}
-
-two.onclick = function enterTwo(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 2;
-  }
-}
-
-three.onclick = function enterThree(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 3;
-  }
-}
-
-zero.onclick = function enterZero(){
-  fontResize();
-  if (numbox.value.length < 18) {
-    numbox.value += 0;
-  }
-}
-
 point.onclick = function enterPoint(){
   fontResize();
   if (numbox.value.length < 18 && dot === 0) {
@@ -166,63 +73,65 @@ point.onclick = function enterPoint(){
   }
 }
 
-/*const equation = numbox.value;*/
-
-divbtn.onclick = function divide(){
-if (operator === 0) {
-  numbox.value += "/";
-  operator = 1;
-  dot = 0;
-}
-  else {
-    numbox.value = numbox.value.substring(0,numbox.value.length-1);
-    numbox.value += "/";
-    dot = 0;
+function numButton(numWord, num) {
+  numWord.onclick = function enterNum() {
+    if (numbox.value === "0" || equalbtn === 1){
+      numbox.value = "";
+      equalbtn = 0;
+    }
+    if (operator !== 0){
+      values[0] = numbox.value;
+      numbox.value = "";
+    }
+    if (numbox.value.length < 18){
+      numbox.value += num;
+      operator = 0;
+    }
+    fontResize();
   }
 }
 
-multibtn.onclick = function multiply(){
-if (operator === 0) {
-  numbox.value += "*";
-  operator = 1;
-  dot = 0;
-}
-  else {
-    numbox.value = numbox.value.substring(0,numbox.value.length-1);
-    numbox.value += "*";
-    dot = 0;
+numButton(seven, 7);
+numButton(eight, 8);
+numButton(nine, 9);
+numButton(four, 4);
+numButton(five, 5);
+numButton(six, 6);
+numButton(one, 1);
+numButton(two, 2);
+numButton(three, 3);
+numButton(zero, 0);
+
+function operation (opebtn, opeValue, opeSign) {
+  opebtn.onclick = function operate(){
+  /*  if (equalbtn === 0 && operator !== 0) {
+      values[2] = numbox.value;
+      var tempans = eval(values[0]+values[1]+values[2]);
+      numbox.value = tempans;
+      fontResize();
+      values[1] = opeSign;
+      operator = opeValue;
+      dot = 0;
+    }*/
+    if (operator !== opeValue) {
+      values[1] = opeSign;
+      operator = opeValue;
+      dot = 0;
+      equalbtn = 0;
+    }
   }
 }
 
-plusbtn.onclick = function add(){
-  if (operator === 0) {
-  numbox.value += "+";
-  operator = 1;
-  dot = 0;
-}
-  else {
-    numbox.value = numbox.value.substring(0,numbox.value.length-1);
-    numbox.value += "+";
-    dot = 0;
-  }
-}
-
-minusbtn.onclick = function subtract(){
-  if (operator === 0) {
-  numbox.value += "-";
-  operator = 1;
-  dot = 0;
-}
-  else {
-    numbox.value = numbox.value.substring(0,numbox.value.length-1);
-    numbox.value += "-";
-    dot = 0;
-  }
-}
+operation (divbtn, 1, "/");
+operation (multibtn, 2, "*");
+operation (plusbtn, 3, "+");
+operation (minusbtn, 4, "-");
 
 equals.onclick = function calculate(){
-var answer = eval(numbox.value);
+values[2] = numbox.value;
+var answer = eval(values[0]+values[1]+values[2]);
 numbox.value = answer;
 fontResize();
-//operator = 0;
+operator = 0;
+equalbtn = 1;
 }
