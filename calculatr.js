@@ -85,7 +85,7 @@ function numButton(numWord, num) {
     }
     if (numbox.value.length < 18){
       numbox.value += num;
-      operator = 0;
+      //operator = 0;  // I wasn't able to do continuous calculation bc of this.
     }
     fontResize();
   }
@@ -104,7 +104,7 @@ numButton(zero, 0);
 
 function operation (opebtn, opeValue, opeSign) {
   opebtn.onclick = function operate(){
-  /*  if (equalbtn === 0 && operator !== 0) {
+    if (equalbtn === 0 && operator !== 0) { //コメントアウトされてた
       values[2] = numbox.value;
       var tempans = eval(values[0]+values[1]+values[2]);
       numbox.value = tempans;
@@ -112,13 +112,13 @@ function operation (opebtn, opeValue, opeSign) {
       values[1] = opeSign;
       operator = opeValue;
       dot = 0;
-    }*/
-    if (operator !== opeValue) {
+    } //コメントアウトされてた
+    //if (operator !== opeValue) {
       values[1] = opeSign;
       operator = opeValue;
       dot = 0;
       equalbtn = 0;
-    }
+    //}
   }
 }
 
